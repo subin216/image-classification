@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Image Classification With Tensorflow</title>
+    <style>
+    h2 {
+    	font-family: Verdana;
+    	color: #d0d0d0;
+    	text-align: center
+    }
+	.imageBox {
+		background-color: pink;
+		width: 1000px;
+		height: 650px;
+		border-radius: 30px;
+		text-align: center;
+		font-size: 15px;
+		margin: auto;
+	}
+	#output {
+		font-family: Verdana;
+	}
+	#imageThumb {
+		width: 350px;
+		height: 350px;
+		background: white;
+		border-radius: 30px;
+	}
+	div, input {
+		margin: 20px;
+		font-family: Verdana;
+	}
+
+	#imageUpload {
+		font-size: 15px;
+	}
+	</style>
+</head>
+
+<body>
+	<h2> Image Classification With Tensorflow </h2>
+	<div class="imageBox">
+	    <form method="post" enctype="multipart/form-data">
+	        <input type="file" id="imageUpload" accept="image/*">
+	        <br/>
+	     	<!-- upgrade_bg.png is from https://toppng.com/file-upload-image-icon-PNG-free-PNG-Images_223100 -->
+	        <img id="imageThumb" src="upload_bg.png">
+	        <br/>
+	        <pre id="output"></pre>
+	    </form>
+    </div>
+	<script src="upload.js"></script>
+</body>
+
+</html>

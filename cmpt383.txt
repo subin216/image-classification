@@ -1,0 +1,37 @@
+1. What is the overall goal of the project 
+	The overall goal of the project is image classification with Tensorflow (Inception-v3 model was used). If a user uploads an image file through the web page, the image file will be sent to the Inception-v3 model through the Spring server. Then, the Spring server will return the result from the python module to let the user know what the Inception-v3 model thinks the picture looks like.
+
+
+2. Which languages did you use, and what parts of the system are implemented in each?
+	I used JavaScript, Java and Python.
+	Java was used for implementing the web server with the SpringBoot framework.
+	Python was used for Tensorflow for the calculation to classify the given image.
+	JavaScript was used for implementing the frontend web page which gets the image file from the user as input
+
+
+3. What methods did you use to communicate between languages?
+	As I mentioned in (1), whenever the user uploads an image file, the image file will be sent to the python Tensorflow module via the server. Then the image will be analyzed by the calculations in the python module.
+
+	So, the relationship between them is JavaScript <-> Java <-> Python
+	(1) Between JavaScript and Java, communication is done through REST API.
+	(2) Between Java and Python, communication is done with ProcessBuilder API from Java. ProcessBuilder API allows the Java program to execute the Python program and receive results such as print statements on the streambuffer.
+
+
+4. Exactly what steps should be taken to get the project working, after getting your code?
+	Since I uploaded the .jar file, you just need to type "docker-compose build && docker-compose up" on the terminal.
+	Then, please wait. it takes around ~5 minutes. (Sorry, Tensorflow library is so big)
+	And, if you see "Started WebApplication in … seconds (JVM running for ...)" message or “Creating web ... done Attaching to web web    | WARNING: no logs are available with the 'syslog' log driver (Csil gave me this message)” on the terminal, please open the web page and go to "http://localhost:8080/"
+	Then you'll see the web page for the project there. I also uploaded some test image files and they are in the "test-image-files" folder. You can test my project with them by uploading and checking the results. Doing the calculations on the image can take several seconds, so, please be patient.
+	I also uploaded an image for how the website should look in the /demo-image folder just for reference.
+
+
+5. What features should we be looking for when marking your project?
+	It took a long time for me to decide on a project using three languages. It was not easy to find it, so I changed my idea multiple times and finally decided on this one. Also, I spent most of my time learning how to communicate between those three languages and how to use Tensorflow, and for setting up the environment both for local and Docker. 
+
+	Features to test for:
+	- Can upload images to the server through the webpage.
+	- The server successfully saves the image into a directory.
+	- The python code reads the file saved by the Spring server, and calculates the classification.
+	- The server reads the results from python and sends it back to the webpage
+	- The webpage updates and displays the result.
+	- Can upload new images and get results without refreshing the webpage.
